@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "data-warp-api"
+version = "0.1.0"
+description = "data-warp-api with FastAPI interface for DuckDB"
+authors = ["Datta Tele <datta.tele@gmail.com>"]
+readme = "README.md"
+package-mode = false
+#packages = [{ include = "backend" }]
+# Correct field name for Python requirement:
+# Poetry does NOT support `requires-python`; instead use `python` in dependencies.
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.14"
+fastapi = "^0.115.12"
+uvicorn = "^0.34.0"
+duckdb = "^1.2.2"
+pydantic = "^2.11.3"
+pydantic-settings = "^2.8.1"
+faker = "^37.1.0"
+click = "^8.0.0"
+pandas = "^2.2.3"
+pyarrow = "^19.0.1"
+fastparquet = "^2024.11.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.5"
+httpx = "^0.28.1"
+pytest-cov = "^6.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
